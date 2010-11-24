@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/qmltweeter.qml</file>
+        <file>qml/SearchModel.qml</file>
+        <file>img/ajax-loader.gif</file>
+        <file>img/twitter_logo.png</file>
+    </qresource>
+</RCC>
