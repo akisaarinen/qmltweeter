@@ -1,1 +1,6 @@
 Simple QML-based twitter application
+
+Running QmlUnit tests:
+1) Get QmlUnit at https://github.com/fgrehm/qmlunit
+2) Compile it to get qmlunit binary
+3) Run "qmlunit ." in the qmltweeter directory

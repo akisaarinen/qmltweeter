@@ -128,14 +128,6 @@ Rectangle {
     SearchModel {
         id: searchModel
         phrase: "meegoconf"
-        onStatusChanged: {
-            console.log("Status change for: " + source + " => " + status)
-            switch (status) {
-            case XmlListModel.Ready: console.log("Done")
-            case XmlListModel.Error: console.log("Error: " + errorString())
-            case XmlListModel.Loading: console.log("Loading")
-            }
-        }
     }
 
 }
