@@ -56,26 +56,11 @@ Rectangle {
         color: "black"
         anchors.bottom: parent.bottom
 
-        TextInput {
+        ThrottledTextInput {
             id: searchInput
-            font.pointSize: 14
             anchors.centerIn: parent
             width: parent.width
-            color: "white"
             text: "meegoconf"
-
-            onTextChanged: {
-                searchThrottle.restart()
-            }
-        }
-
-        Timer {
-            id: searchThrottle
-            interval: 500
-            repeat: false
-            onTriggered: {
-                searchModel.phrase = searchInput.text
-            }
         }
     }
 
@@ -127,7 +112,6 @@ Rectangle {
 
     SearchModel {
         id: searchModel
-        phrase: "meegoconf"
+        phrase: searchInput.throttledText
     }
-
 }
