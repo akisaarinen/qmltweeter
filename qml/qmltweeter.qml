@@ -12,10 +12,10 @@ Rectangle {
         z: 10
 
         gradient: Gradient {
-             GradientStop { position: 0.0; color: "#000" }
-             GradientStop { position: 0.3; color: "#333" }
-             GradientStop { position: 1.0; color: "#888" }
-         }
+            GradientStop { position: 0.0; color: "#000" }
+            GradientStop { position: 0.3; color: "#333" }
+            GradientStop { position: 1.0; color: "#888" }
+        }
 
         Image {
             id: logo
@@ -30,11 +30,11 @@ Rectangle {
         y: topBar.height
         height: 10
         gradient: Gradient {
-             GradientStop { position: 0.0; color: "#444" }
-             GradientStop { position: 0.2; color: "#ccc" }
-             GradientStop { position: 0.5; color: "#eee" }
-             GradientStop { position: 1.0; color: "#fff" }
-         }
+            GradientStop { position: 0.0; color: "#444" }
+            GradientStop { position: 0.2; color: "#ccc" }
+            GradientStop { position: 0.5; color: "#eee" }
+            GradientStop { position: 1.0; color: "#fff" }
+        }
     }
 
     Rectangle {
@@ -78,12 +78,12 @@ Rectangle {
             anchors.centerIn: parent
             visible: !tweetView.visible
             NumberAnimation on rotation {
-                    from: 0
-                    to: 360
-                    running: loading.visible == true
-                    loops: Animation.Infinite
-                    duration: 1500
-                }
+                from: 0
+                to: 360
+                running: loading.visible == true
+                loops: Animation.Infinite
+                duration: 1500
+            }
         }
 
         TweetView {
