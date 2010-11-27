@@ -22,7 +22,9 @@ OTHER_FILES += \
     qml/SearchModel.qml \
     qml/SearchModelTest.qml \
     qml/ThrottledTextInput.qml \
-    qml/ThrottledTextInputTest.qml
+    qml/ThrottledTextInputTest.qml \
+    qml/TweetView.qml \
+    qml/TweetViewTest.qml
 
 RESOURCES += \
     res.qrc
