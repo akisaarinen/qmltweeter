@@ -20,7 +20,9 @@ FORMS    +=
 OTHER_FILES += \
     qml/qmltweeter.qml \
     qml/SearchModel.qml \
-    qml/ThrottledTextInput.qml
+    qml/SearchModelTest.qml \
+    qml/ThrottledTextInput.qml \
+    qml/ThrottledTextInputTest.qml
 
 RESOURCES += \
     res.qrc
