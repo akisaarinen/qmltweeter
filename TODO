@@ -1,0 +1,8 @@
+- Search history & auto-completion (will require some saving
+  to local filesystem and hence some C++ integration)
+- Clicking of @user -links in tweets to do searchs based on 
+  that user and show some user info
+- Clicking of links in tweets by launching the integrated
+  WebKit-browser (requires some work because the default
+  WebKit-component is quite dumb)
+
