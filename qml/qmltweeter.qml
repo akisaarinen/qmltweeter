@@ -92,19 +92,34 @@ Rectangle {
             visible: model.status == XmlListModel.Ready
             delegate: Column {
                 spacing: 2
+                width: parent.width
+
                 Text {
                     text: author
                     font.pointSize: 13
                     color: "black"
                 }
+
                 Text {
                     text: title
                     font.pointSize: 10
                     color: "black"
                 }
+
                 Item {
                     width: parent.width
-                    height: 10
+                    height: 5
+                }
+
+                Rectangle {
+                    width: parent.width
+                    height: 1
+                    color: "gray"
+                }
+
+                Item {
+                    width: parent.width
+                    height: 5
                 }
             }
         }
