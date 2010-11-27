@@ -1,7 +1,10 @@
 import Qt 4.7
 
 XmlListModel {
-    source: "http://search.twitter.com/search.rss?phrase=" + phrase
+    source: {
+        if (phrase == "") { return "" }
+        "http://search.twitter.com/search.rss?phrase=" + phrase
+    }
     query: "/rss/channel/item"
     property bool ready: false
     property string phrase: ""
