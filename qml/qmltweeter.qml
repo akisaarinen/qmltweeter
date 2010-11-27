@@ -61,6 +61,7 @@ Rectangle {
             anchors.centerIn: parent
             width: parent.width
             text: "meegoconf"
+            focus: true
         }
     }
 
@@ -89,6 +90,9 @@ Rectangle {
             id: tweetView
             model: searchModel
             anchors.fill: parent
+            onVisibleChanged: {
+                searchInput.focus = true
+            }
         }
     }
 
