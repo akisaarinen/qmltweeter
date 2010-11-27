@@ -5,8 +5,8 @@ QmlTestCase {
 
     SearchModel {
         id: searchModel
-        onStatusChanged: {
-            if (status == XmlListModel.Ready) {
+        onReadyChanged: {
+            if (ready) {
                 start();
             }
         }

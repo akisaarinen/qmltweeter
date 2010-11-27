@@ -3,6 +3,7 @@ import Qt 4.7
 XmlListModel {
     source: "http://search.twitter.com/search.rss?phrase=" + phrase
     query: "/rss/channel/item"
+    property bool ready: false
     property string phrase: ""
 
     XmlRole { name: "title"; query: "title/string()" }
@@ -16,6 +17,7 @@ XmlListModel {
         case XmlListModel.Error: console.log("Error: " + errorString())
         case XmlListModel.Loading: console.log("Loading")
         }
+        ready = (status == XmlListModel.Ready)
     }
 }
 
