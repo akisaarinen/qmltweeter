@@ -24,9 +24,6 @@ QmlTestCase {
         model: testModel
     }
 
-    function setup() {
-    }
-
     function test_containsFirstPost() {
         view.currentIndex = 0
         equals(view.currentItem.children[0].text, "@akisaarinen (Aki Saarinen)")

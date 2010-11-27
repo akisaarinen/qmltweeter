@@ -13,14 +13,17 @@ QmlTestCase {
     }
 
     function asyncTest_checkThrottle() {
-        var UPDATED_TEXT = "FOO"
         expect(3)
-        equals(input.throttledText, "", "Initial text is")
-        input.text = UPDATED_TEXT
-        equals(input.throttledText, "", "Immediately after change text is")
+
+        var UPDATED_TEXT = "FOO"
+
         connect(input.throttledTextChanged, function() {
             equals(input.throttledText, UPDATED_TEXT, "Text is changed eventually to")
             test.start()
         })
+
+        equals(input.throttledText, "", "Initial text is")
+        input.text = UPDATED_TEXT
+        equals(input.throttledText, "", "Immediately after change text is")
     }
 }

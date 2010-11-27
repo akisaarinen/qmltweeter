@@ -7,18 +7,23 @@ QmlTestCase {
         id: searchModel
         onReadyChanged: {
             if (ready) {
-                start();
+                equals(searchModel.count, 15, "Model contains data")
+                start()
             }
         }
     }
 
-    function setup() {
+
+    function asyncTest_fetchDataWithNormalKeyword() {
+        expect(1)
         searchModel.phrase = "meegoconf"
-        stop();
+        stop()
     }
 
-    function asyncTest_fetchData() {
-        equals(searchModel.count, 15, "Model contains data")
-        start();
+
+    function asyncTest_fetchDataWithUsername() {
+        expect(1)
+        searchModel.phrase = "@mfeathers"
+        stop()
     }
 }
