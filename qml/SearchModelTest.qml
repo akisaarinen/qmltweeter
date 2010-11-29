@@ -1,29 +1,36 @@
+
 import Qt 4.7
 import QmlUnitTest 0.1
 
+
 QmlTestCase {
+    id: test
 
     SearchModel {
         id: searchModel
-        onReadyChanged: {
-            if (ready) {
-                equals(searchModel.count, 15, "Model contains data")
-                start()
-            }
-        }
     }
-
 
     function asyncTest_fetchDataWithNormalKeyword() {
-        expect(1)
+        expect(3)
         searchModel.phrase = "meegoconf"
-        stop()
+        connect(searchModel.readyChanged, function() {
+            equals(searchModel.count, 15, "Model contains data")
+            equals(searchModel.phrase, "meegoconf")
+            ok(searchModel.get(0).title.indexOf(searchModel.phrase) > -1, "Item contains search string")
+            test.start()
+        })
+        test.stop()
     }
 
-
     function asyncTest_fetchDataWithUsername() {
-        expect(1)
+        expect(3)
         searchModel.phrase = "@mfeathers"
-        stop()
+        connect(searchModel.readyChanged, function() {
+            equals(searchModel.count, 15, "Model contains data")
+            equals(searchModel.phrase, "@mfeathers")
+            ok(searchModel.get(0).title.indexOf(searchModel.phrase) > -1, "Item contains search string")
+            test.start()
+        })
+        test.stop()
     }
 }
