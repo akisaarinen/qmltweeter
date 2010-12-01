@@ -153,13 +153,34 @@ Rectangle {
             Image {
                 id: logo
                 source: "/img/twitter_logo.png"
-                anchors.centerIn: parent
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 12
+                anchors.left: parent.left
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        root.state = "about"
+                    }
+                }
             }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    root.state = "about"
+            ThrottledTextInput {
+                id: searchInput
+
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.right: parent.right
+                anchors.left: logo.right
+                anchors.leftMargin: 10
+                anchors.margins: 2
+                width: parent.width - logo.width
+                height: parent.height - 6
+                text: searchTerm
+                focus: true
+
+                onThrottledTextChanged: {
+                    console.log("Throttled text changed to " + throttledText)
+                    settings.setSearchTerm(throttledText)
                 }
             }
         }
@@ -180,32 +201,12 @@ Rectangle {
         Rectangle {
             id: bottomGradient
             width: parent.width
-            anchors.bottom: searchBar.top
+            anchors.bottom: parent.bottom
             height: 20
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#fff" }
                 GradientStop { position: 0.6; color: "#eee" }
                 GradientStop { position: 1.0; color: "#ccc" }
-            }
-        }
-
-        Rectangle {
-            id: searchBar
-            width: parent.width
-            height: 30
-            color: "black"
-            anchors.bottom: parent.bottom
-
-            ThrottledTextInput {
-                id: searchInput
-                anchors.centerIn: parent
-                width: parent.width
-                text: searchTerm
-                focus: true
-
-                onThrottledTextChanged: {
-                    settings.setSearchTerm(throttledText)
-                }
             }
         }
 
