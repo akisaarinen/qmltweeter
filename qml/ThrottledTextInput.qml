@@ -1,6 +1,7 @@
 import Qt 4.7
 
 TextInput {
+    id: input
     font.pointSize: 14
     color: "white"
     property string throttledText: ""
@@ -12,10 +13,10 @@ TextInput {
 
     Timer {
         id: throttleTimer
-        interval: parent.throttleInterval
+        interval: input.throttleInterval
         repeat: false
         onTriggered: {
-            parent.throttledText = parent.text
+            input.throttledText = input.text
         }
     }
 }
