@@ -11,9 +11,11 @@ CONFIG += app_bundle
 TARGET = qmltweeter
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    settingspersistor.cpp
 
-HEADERS  +=
+HEADERS  += \
+    settingspersistor.h
 
 FORMS    +=
 

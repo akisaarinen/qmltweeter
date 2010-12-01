@@ -6,6 +6,10 @@ Rectangle {
     width: 600
     height: 300
 
+    function settingsSaved(filename) {
+        console.log("Settings saved to " + filename)
+    }
+
     states: [
         State {
             name: "search"
@@ -196,8 +200,12 @@ Rectangle {
                 id: searchInput
                 anchors.centerIn: parent
                 width: parent.width
-                text: "meegoconf"
+                text: searchTerm
                 focus: true
+
+                onThrottledTextChanged: {
+                    settings.setSearchTerm(throttledText)
+                }
             }
         }
 
