@@ -1,5 +1,6 @@
-- Search history & auto-completion (will require some saving
-  to local filesystem and hence some C++ integration)
+- Better throttling: search every 500ms instead of waiting
+  until the user has stopped typing => more responsive UI
+- Search history & auto-completion?
 - Clicking of @user -links in tweets to do searchs based on 
   that user and show some user info
 - Clicking of links in tweets by launching the integrated
