@@ -14,13 +14,12 @@ XmlListModel {
     XmlRole { name: "author"; query: "author/string()" }
 
     onStatusChanged: {
-        console.log("Status change for: " + source + " => " + status)
-        switch (status) {
-        case XmlListModel.Ready: console.log("Done")
-        case XmlListModel.Error: console.log("Error: " + errorString())
-        case XmlListModel.Loading: console.log("Loading")
-        }
         ready = (status == XmlListModel.Ready)
+        switch (status) {
+        case XmlListModel.Ready:    console.log("[READY]   '" + source + "' | "  + count + " items")
+        case XmlListModel.Error:    console.log("[ERROR]   '" + source + "' | Error: ''" + errorString() + "'")
+        case XmlListModel.Loading:  console.log("[LOADING] '" + source + "'")
+        }
     }
 }
 
