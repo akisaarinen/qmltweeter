@@ -7,5 +7,6 @@
         <file>qml/ThrottledTextInput.qml</file>
         <file>qml/TweetView.qml</file>
         <file>qml/Button.qml</file>
+        <file>qml/About.qml</file>
     </qresource>
 </RCC>
