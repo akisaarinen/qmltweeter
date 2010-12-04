@@ -153,6 +153,7 @@ Rectangle {
             Image {
                 id: logo
                 source: "/img/twitter_logo.png"
+
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 12
                 anchors.left: parent.left
@@ -169,11 +170,13 @@ Rectangle {
                 id: searchInput
 
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.right: parent.right
+
                 anchors.left: logo.right
                 anchors.leftMargin: 10
+                anchors.right: updateButton.left
+                anchors.rightMargin: 10
                 anchors.margins: 2
-                width: parent.width - logo.width
+
                 height: parent.height - 6
                 text: searchTerm
                 focus: true
@@ -181,6 +184,23 @@ Rectangle {
                 onThrottledTextChanged: {
                     console.log("Throttled text changed to " + throttledText)
                     settings.setSearchTerm(throttledText)
+                }
+            }
+
+            Button {
+                id: updateButton
+                text: "Update"
+                gradient: grayGradient
+                textColor: "white"
+                radius: 4
+
+                width: 100
+                anchors.verticalCenter: parent.verticalCenter
+                height: parent.height - 6
+                anchors.right: parent.right
+                anchors.rightMargin: 3
+                onClicked: {
+                    searchModel.reload()
                 }
             }
         }
@@ -245,5 +265,11 @@ Rectangle {
             id: searchModel
             phrase: searchInput.throttledText
         }
+    }
+
+    Gradient {
+        id: grayGradient
+        GradientStop { position: 0.0; color: "#888" }
+        GradientStop { position: 1.0; color: "#666" }
     }
 }

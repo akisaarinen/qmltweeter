@@ -26,7 +26,8 @@ OTHER_FILES += \
     qml/ThrottledTextInput.qml \
     qml/ThrottledTextInputTest.qml \
     qml/TweetView.qml \
-    qml/TweetViewTest.qml
+    qml/TweetViewTest.qml \
+    qml/Button.qml
 
 RESOURCES += \
     res.qrc

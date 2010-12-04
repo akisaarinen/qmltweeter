@@ -6,5 +6,6 @@
         <file>img/twitter_logo.png</file>
         <file>qml/ThrottledTextInput.qml</file>
         <file>qml/TweetView.qml</file>
+        <file>qml/Button.qml</file>
     </qresource>
 </RCC>
