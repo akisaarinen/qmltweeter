@@ -13,6 +13,8 @@ ListView {
             text: author
             font.pointSize: 13
             color: "black"
+            wrapMode: Text.WordWrap
+            width: parent.width
         }
 
         Text {
@@ -20,6 +22,8 @@ ListView {
             text: title
             font.pointSize: 10
             color: "black"
+            wrapMode: Text.WordWrap
+            width: parent.width
         }
 
         Item {
