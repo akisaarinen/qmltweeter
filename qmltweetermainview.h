@@ -2,9 +2,9 @@
 #define QMLTWEETERMAINVIEW_H
 
 #include <QMainWindow>
-#include <QDeclarativeView>
 
 class QSettings;
+class QDeclarativeView;
 class SettingsPersistor;
 
 class QmlTweeterMainView : public QMainWindow
@@ -18,7 +18,7 @@ signals:
 public slots:
 
 private:
-    QDeclarativeView view;
+    QDeclarativeView* view;
     SettingsPersistor* settingsPersistor;
 };
 
