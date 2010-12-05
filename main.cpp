@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QtDeclarative>
-#include <QDeclarativeView>
 #include <QDeclarativeContext>
+#include "qmltweetermainview.h"
 
 #include "settingspersistor.h"
 
@@ -12,7 +12,9 @@ int main(int argc, char *argv[])
     QSettings settings("qmltweeter.conf", QSettings::IniFormat);
     settings.sync();
 
-    QDeclarativeView view;
+    QmlTweeterMainView mainView;
+    QDeclarativeView& view = mainView.view;
+
     QDeclarativeContext *context = view.rootContext();
 
     SettingsPersistor settingsPersistor(context, &settings);
@@ -26,7 +28,7 @@ int main(int argc, char *argv[])
     QObject *rootObject = view.rootObject();
     QObject::connect(&settingsPersistor, SIGNAL(settingsSaved(QVariant)), rootObject, SLOT(settingsSaved(QVariant)));
 
-    view.show();
+    mainView.show();
 
     return app.exec();
 }

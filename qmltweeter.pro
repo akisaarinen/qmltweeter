@@ -12,10 +12,12 @@ TARGET = qmltweeter
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    settingspersistor.cpp
+    settingspersistor.cpp \
+    qmltweetermainview.cpp
 
 HEADERS  += \
-    settingspersistor.h
+    settingspersistor.h \
+    qmltweetermainview.h
 
 MOC_DIR = ./build
 OBJECTS_DIR = ./build
