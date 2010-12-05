@@ -17,6 +17,10 @@ SOURCES += main.cpp \
 HEADERS  += \
     settingspersistor.h
 
+MOC_DIR = ./build
+OBJECTS_DIR = ./build
+RCC_DIR = ./build
+
 FORMS    +=
 
 OTHER_FILES += \
