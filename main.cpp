@@ -23,12 +23,10 @@ int main(int argc, char *argv[])
 
     view.setSource(QUrl("qrc:///qml/qmltweeter.qml"));
 
-    QObject *rootObject = dynamic_cast<QObject*>(view.rootObject());
+    QObject *rootObject = view.rootObject();
     QObject::connect(&settingsPersistor, SIGNAL(settingsSaved(QVariant)), rootObject, SLOT(settingsSaved(QVariant)));
 
     view.show();
-
-
 
     return app.exec();
 }
