@@ -2,8 +2,6 @@ import Qt 4.7
 
 Rectangle {
     id: root
-    width: 600
-    height: 300
 
     function settingsSaved(filename) {
         console.log("Settings saved to " + filename)
