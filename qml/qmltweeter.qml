@@ -83,7 +83,7 @@ Rectangle {
 
                 anchors.left: logo.right
                 anchors.leftMargin: 10
-                anchors.right: updateButton.left
+                anchors.right: parent.right
                 anchors.rightMargin: 10
                 anchors.margins: 2
 
@@ -94,23 +94,6 @@ Rectangle {
                 onThrottledTextChanged: {
                     console.log("Throttled text changed to " + throttledText)
                     settings.setSearchTerm(throttledText)
-                }
-            }
-
-            Button {
-                id: updateButton
-                text: "Update"
-                gradient: grayGradient
-                textColor: "white"
-                radius: 4
-
-                width: 100
-                anchors.verticalCenter: parent.verticalCenter
-                height: parent.height - 6
-                anchors.right: parent.right
-                anchors.rightMargin: 3
-                onClicked: {
-                    searchModel.reload()
                 }
             }
         }

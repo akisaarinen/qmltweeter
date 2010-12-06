@@ -33,7 +33,6 @@ OTHER_FILES += \
     qml/ThrottledTextInputTest.qml \
     qml/TweetView.qml \
     qml/TweetViewTest.qml \
-    qml/Button.qml \
     qml/About.qml
 
 RESOURCES += \
