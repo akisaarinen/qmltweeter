@@ -1,0 +1,39 @@
+Pure QML
+========
+
+Animated loading indicator for tweets
+-------------------------------------
+
+* An animated rotating loading indicator that is shown when
+  the tweets are being refreshed
+* http://doc.qt.nokia.com/4.7-snapshot/qml-image.html
+* An image available at "/img/ajax-loader.gif"
+
+Update-button to refresh current search results
+-----------------------------------------------
+
+1) Implement as inline QML
+* http://doc.qt.nokia.com/4.7-snapshot/qml-mousearea.html
+
+2) Implement as a named QML component 'Button'
+* Create a new QML component named 'Button' in qml/Button.qml 
+  (remember to add it as a resource, too!)
+* Define the following properties:
+    - text => Text to display in the button
+    - textColor => Color of the text
+* Emit a 'clicked' -signal when button is clicked
+* Use the created Button -component to refresh the
+  current tweet search with latest results from Twitter
+
+QML and C++
+===============================================
+
+Saving of current search term over application restarts
+-------------------------------------------------------
+
+* When application is started, current search term is loaded from
+  persistent property file. Whenever use enters new search term, the current
+  search term is saved to be used after next restart.
+* See http://doc.qt.nokia.com/4.7-snapshot/qdeclarativecontext.html,
+  especially #contextProperty() and #setContextProperty()
+* QML and C++ interoperability: http://doc.qt.nokia.com/4.7-snapshot/qtbinding.html
