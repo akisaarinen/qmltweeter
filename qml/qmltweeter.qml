@@ -130,20 +130,6 @@ Rectangle {
             anchors.top: topGradient.bottom
             anchors.bottom: bottomGradient.top
 
-            Image {
-                id: loading
-                source: "/img/ajax-loader.gif"
-                anchors.centerIn: parent
-                visible: !tweetView.visible
-                NumberAnimation on rotation {
-                    from: 0
-                    to: 360
-                    running: loading.visible == true
-                    loops: Animation.Infinite
-                    duration: 1500
-                }
-            }
-
             TweetView {
                 id: tweetView
                 model: searchModel
