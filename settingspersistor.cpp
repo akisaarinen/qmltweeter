@@ -10,9 +10,13 @@ SettingsPersistor::SettingsPersistor(QDeclarativeContext *context, QSettings* se
 {
 }
 
-void SettingsPersistor::setSearchTerm(QVariant searchTerm) {
-    m_context->setContextProperty("searchTerm", searchTerm);
-    m_settings->setValue("searchTerm", searchTerm);
+void SettingsPersistor::save() {
     m_settings->sync();
     emit settingsSaved(m_settings->fileName());
 }
+
+void SettingsPersistor::setSearchTerm(QVariant searchTerm) {
+    m_context->setContextProperty("searchTerm", searchTerm);
+    m_settings->setValue("searchTerm", searchTerm);
+}
+

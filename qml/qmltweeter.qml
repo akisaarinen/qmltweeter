@@ -94,6 +94,7 @@ Rectangle {
                 onThrottledTextChanged: {
                     console.log("Throttled text changed to " + throttledText)
                     settings.setSearchTerm(throttledText)
+                    settings.save()
                 }
             }
         }

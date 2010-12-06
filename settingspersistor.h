@@ -17,6 +17,7 @@ signals:
     void settingsSaved(QVariant filename);
 
 public slots:
+    void save();
     void setSearchTerm(QVariant search);
 
 private:
