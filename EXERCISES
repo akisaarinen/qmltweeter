@@ -25,6 +25,26 @@ Update-button to refresh current search results
 * Use the created Button -component to refresh the
   current tweet search with latest results from Twitter
 
+Throttled continuous search
+---------------------------
+
+1) Implement a throttled continuous search
+* Easy version: search 500ms after user has stopped typing
+* Hard version: search every 500ms even when user is typing
+* http://doc.qt.nokia.com/4.7-snapshot/qml-timer.html
+* To keep focus correct, wrap the component to FocusScope. See examples at 
+  http://doc.qt.nokia.com/4.7-snapshot/qdeclarativefocus.html#acquiring-focus-and-focus-scopes
+
+2) Extract to QML component named 'ThrottledTextInput'
+* An example of text input component available at http://jryannel.wordpress.com/2010/02/18/a-textinput-component/
+* Define the following properties
+    - throttleInterval (interval in ms)
+    - throttledText (current text with throttling enabled)
+    - text (current text)
+* Use for automated search by binding to throttledTextChanged -property
+    - QML will emit this automatically when throttledText -property
+      is changed
+
 QML and C++
 ===============================================
 
