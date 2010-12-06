@@ -29,8 +29,6 @@ OTHER_FILES += \
     qml/qmltweeter.qml \
     qml/SearchModel.qml \
     qml/SearchModelTest.qml \
-    qml/ThrottledTextInput.qml \
-    qml/ThrottledTextInputTest.qml \
     qml/TweetView.qml \
     qml/TweetViewTest.qml \
     qml/About.qml

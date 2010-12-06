@@ -76,9 +76,10 @@ Rectangle {
                 }
             }
 
-            ThrottledTextInput {
-                id: searchInput
 
+            FocusScope {
+                id: searchInput
+                property string throttledText: "meego"
                 anchors.verticalCenter: parent.verticalCenter
 
                 anchors.left: logo.right
@@ -86,14 +87,24 @@ Rectangle {
                 anchors.right: parent.right
                 anchors.rightMargin: 10
                 anchors.margins: 2
-
                 height: parent.height - 6
-                text: "meego"
-                focus: true
 
-                onThrottledTextChanged: {
-                    console.log("Throttled text changed to " + throttledText)
-                    settings.save()
+                Rectangle {
+                    anchors.fill: parent
+
+                    TextInput {
+                        anchors.fill: parent
+                        color: "black"
+                        text: searchInput.throttledText
+
+                        Keys.onPressed: {
+                            if (event.key == Qt.Key_Enter || event.key == Qt.Key_Return) {
+                                searchInput.throttledText = text
+                                event.accepted = true
+                            }
+                        }
+                    }
+                    focus: true
                 }
             }
         }
