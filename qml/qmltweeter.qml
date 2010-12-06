@@ -88,12 +88,11 @@ Rectangle {
                 anchors.margins: 2
 
                 height: parent.height - 6
-                text: searchTerm
+                text: "meego"
                 focus: true
 
                 onThrottledTextChanged: {
                     console.log("Throttled text changed to " + throttledText)
-                    settings.setSearchTerm(throttledText)
                     settings.save()
                 }
             }

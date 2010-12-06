@@ -18,7 +18,6 @@ signals:
 
 public slots:
     void save();
-    void setSearchTerm(QVariant search);
 
 private:
     QDeclarativeContext *m_context;
