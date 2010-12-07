@@ -31,7 +31,8 @@ OTHER_FILES += \
     qml/SearchModelTest.qml \
     qml/TweetView.qml \
     qml/TweetViewTest.qml \
-    qml/About.qml
+    qml/About.qml \
+    qml/MainView.qml
 
 RESOURCES += \
     res.qrc

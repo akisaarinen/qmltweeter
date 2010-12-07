@@ -6,5 +6,6 @@
         <file>img/twitter_logo.png</file>
         <file>qml/TweetView.qml</file>
         <file>qml/About.qml</file>
+        <file>qml/MainView.qml</file>
     </qresource>
 </RCC>
