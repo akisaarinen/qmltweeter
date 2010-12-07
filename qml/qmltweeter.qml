@@ -3,6 +3,26 @@ import Qt 4.7
 Rectangle {
     id: root
 
+    MainView {
+        id: mainView
+        width: parent.width
+        height: parent.height
+        onLogoClicked: {
+            root.state = "about"
+        }
+    }
+
+    About {
+        id: aboutView
+        width: parent.width
+        height: parent.height
+        anchors.left: mainView.right
+        z: 100
+        onExit: {
+            root.state = "search"
+        }
+    }
+
     function settingsSaved(filename) {
         console.log("Settings saved to " + filename)
     }
@@ -27,26 +47,6 @@ Rectangle {
             properties: "x";
             easing.type: Easing.InOutQuad
             duration: 300
-        }
-    }
-
-    About {
-        id: aboutView
-        width: parent.width
-        height: parent.height
-        anchors.left: mainView.right
-        z: 100
-        onExit: {
-            root.state = "search"
-        }
-    }
-
-    MainView {
-        id: mainView
-        width: parent.width
-        height: parent.height
-        onLogoClicked: {
-            root.state = "about"
         }
     }
 }
