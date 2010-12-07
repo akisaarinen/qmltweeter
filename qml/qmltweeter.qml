@@ -144,6 +144,7 @@ Rectangle {
                 model: searchModel
                 anchors.fill: parent
                 onVisibleChanged: {
+                    // ugly hack to keep focus in search input box
                     searchInput.focus = true
                 }
             }
