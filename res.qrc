@@ -4,7 +4,6 @@
         <file>qml/SearchModel.qml</file>
         <file>img/ajax-loader.gif</file>
         <file>img/twitter_logo.png</file>
-        <file>qml/ThrottledTextInput.qml</file>
         <file>qml/TweetView.qml</file>
         <file>qml/About.qml</file>
     </qresource>
