@@ -1,5 +1,5 @@
 #include <QApplication>
-#include <Qsettings>
+#include <QSettings>
 #include "qmltweetermainview.h"
 
 int main(int argc, char *argv[])
