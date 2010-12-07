@@ -21,14 +21,12 @@ Rectangle {
                 target: aboutView
                 opacity: 1.0
             }
-            PropertyChanges {
-                target: backgroundAnimation
-                state: "b"
-            }
         }
     ]
 
     transitions: Transition {
+        from: "*"
+        to: "*"
         NumberAnimation {
             properties: "opacity";
             easing.type: Easing.InOutQuad
