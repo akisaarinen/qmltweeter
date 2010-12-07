@@ -17,7 +17,6 @@ Rectangle {
         width: parent.width
         height: parent.height
         anchors.left: mainView.right
-        z: 100
         onExit: {
             root.state = "search"
         }
