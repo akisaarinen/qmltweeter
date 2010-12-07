@@ -56,6 +56,17 @@ Fancy graphics to about box
 Implement something fancy in the about box e.g. with the particle engine or
 create fancy transitions from main view to about box etc.
 
+Showing of current twitter trends
+---------------------------------
+
+Get current twitter trends and show them as a list. When clicked, set the
+trend as current search.
+
+* http://dev.twitter.com/doc/get/trends
+* http://api.twitter.com/1/trends.json (example URL, use .xml for XmlListModel)
+
+See SearchModel.qml for examples of how to do it.
+
 QML and C++
 ===============================================
 
