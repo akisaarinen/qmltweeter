@@ -45,6 +45,17 @@ Throttled continuous search
     - QML will emit this automatically when throttledText -property
       is changed
 
+Splash screen
+-------------
+
+Implement an animated splash screen when the application starts.
+
+Fancy graphics to about box
+---------------------------
+
+Implement something fancy in the about box e.g. with the particle engine or
+create fancy transitions from main view to about box etc.
+
 QML and C++
 ===============================================
 
