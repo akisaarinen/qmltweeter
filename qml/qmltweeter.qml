@@ -145,6 +145,7 @@ Rectangle {
             TweetView {
                 id: tweetView
                 model: searchModel
+                visible: model.ready
                 anchors.fill: parent
                 onVisibleChanged: {
                     // ugly hack to keep focus in search input box

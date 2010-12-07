@@ -2,7 +2,6 @@ import Qt 4.7
 
 ListView {
     id: tweetView
-    visible: model.ready
 
     delegate: Column {
         spacing: 2
