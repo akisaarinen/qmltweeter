@@ -10,16 +10,12 @@ Rectangle {
     states: [
         State {
             name: "search"
-            PropertyChanges {
-                target: aboutView
-                opacity: 0.0
-            }
         },
         State {
             name: "about"
             PropertyChanges {
-                target: aboutView
-                opacity: 1.0
+                target: mainView
+                x: -root.width
             }
         }
     ]
@@ -28,7 +24,7 @@ Rectangle {
         from: "*"
         to: "*"
         NumberAnimation {
-            properties: "opacity";
+            properties: "x";
             easing.type: Easing.InOutQuad
             duration: 300
         }
@@ -36,18 +32,19 @@ Rectangle {
 
     About {
         id: aboutView
-        anchors.fill: parent
-        opacity: 0.0
+        width: parent.width
+        height: parent.height
+        anchors.left: mainView.right
         z: 100
         onExit: {
             root.state = "search"
         }
     }
 
-
     Rectangle {
         id: mainView
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height
 
         Rectangle {
             id: topBar
