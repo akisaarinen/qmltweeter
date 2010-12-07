@@ -15,7 +15,7 @@ Rectangle {
             name: "about"
             PropertyChanges {
                 target: mainView
-                x: -root.width
+                x: -mainView.width
             }
         }
     ]
