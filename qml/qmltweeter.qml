@@ -49,10 +49,4 @@ Rectangle {
             root.state = "about"
         }
     }
-
-    Gradient {
-        id: grayGradient
-        GradientStop { position: 0.0; color: "#888" }
-        GradientStop { position: 1.0; color: "#666" }
-    }
 }
