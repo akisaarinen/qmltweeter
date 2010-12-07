@@ -45,6 +45,9 @@ Rectangle {
         id: mainView
         width: parent.width
         height: parent.height
+        onLogoClicked: {
+            root.state = "about"
+        }
     }
 
     Gradient {
