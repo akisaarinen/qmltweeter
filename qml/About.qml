@@ -2,7 +2,7 @@ import Qt 4.7
 import Qt.labs.particles 1.0
 
 Rectangle {
-    signal exit;
+    signal exit
 
     gradient: Gradient {
         GradientStop { position: 0.0; color: "#888" }
@@ -15,7 +15,6 @@ Rectangle {
         anchors.fill: parent
         color: "red"
         opacity: 0.15
-
 
         SequentialAnimation on color {
             ColorAnimation {
