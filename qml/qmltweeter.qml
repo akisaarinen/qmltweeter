@@ -39,6 +39,9 @@ Rectangle {
         anchors.fill: parent
         opacity: 0.0
         z: 100
+        onExit: {
+            root.state = "search"
+        }
     }
 
 

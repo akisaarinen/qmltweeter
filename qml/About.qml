@@ -2,6 +2,7 @@ import Qt 4.7
 import Qt.labs.particles 1.0
 
 Rectangle {
+    signal exit;
 
     gradient: Gradient {
         GradientStop { position: 0.0; color: "#888" }
@@ -87,7 +88,7 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            root.state = "search"
+            exit()
         }
     }
 }
