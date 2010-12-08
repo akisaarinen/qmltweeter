@@ -1,71 +1,80 @@
+This file contains some ideas for exercises that can be done with the
+qmltweeter in order to learn QML. 
+
 1. QML only
 ===========
 
 1.1 Animated loading indicator for tweets
 -----------------------------------------
 
-    * An animated rotating loading indicator that is shown when
-      the tweets are being refreshed
+    * Should be visible when tweets are being fetched
+    * Image available at "/img/ajax-loader.gif"
     * http://doc.qt.nokia.com/4.7-snapshot/qml-image.html
-    * An image available at "/img/ajax-loader.gif"
 
-1.2 Update-button to refresh current search results
+1.2 Add button to refresh current search results
 ---------------------------------------------------
 
-    (1) Implement as inline QML
+    * Instead of reacting only to enter, add a button next to the tweet are for
+      refreshing tweets
+    * Implement directly to MainView.qml
     * http://doc.qt.nokia.com/4.7-snapshot/qml-mousearea.html
 
-    (2) Implement as a named QML component 'Button'
-    * Create a new QML component named 'Button' in qml/Button.qml 
-      (remember to add it as a resource, too!)
-    * Define the following properties:
-        - text => Text to display in the button
-        - textColor => Color of the text
-    * Emit a 'clicked' -signal when button is clicked
-    * Use the created Button -component to refresh the
-      current tweet search with latest results from Twitter
+1.3 Extract the update-button to a QML component
+---------------------------------------------------
 
-1.3 Throttled continuous search
+    * Create a new QML component named 'Button' in qml/Button.qml 
+    * Remember to add as a resource in "req.qrc"
+    * Define own component properties (at least) for
+        - text that is displayed
+        - color of the text
+    * Emit a 'clicked' -signal when button is clicked
+    * Instead of the previous implementation directly in MainView.qml, use this
+      Button-component to refresh latest search results
+
+1.4 Throttled continuous search
 -------------------------------
 
-    1) Implement a throttled continuous search
-    * Easy version: search 500ms after user has stopped typing
-    * Hard version: search every 500ms even when user is typing
+    * Easier version: search 500ms after user has stopped typing
+    * Harder version: search every 500ms even when user is typing
+    
     * http://doc.qt.nokia.com/4.7-snapshot/qml-timer.html
     * To keep focus correct, wrap the component to FocusScope. See examples at 
       http://doc.qt.nokia.com/4.7-snapshot/qdeclarativefocus.html#acquiring-focus-and-focus-scopes
+    * An example: http://jryannel.wordpress.com/2010/02/18/a-textinput-component/
 
-    2) Extract to QML component named 'ThrottledTextInput'
-    * An example of text input component available at http://jryannel.wordpress.com/2010/02/18/a-textinput-component/
-    * Define the following properties
-        - throttleInterval (interval in ms)
+1.5 Extract throttled input as a QML component
+----------------------------------------------
+
+    * Extract to QML component by creating e.g. "qml/ThrottledSearchInput.qml"
+    * Define your own component properties for e.g.:
+        - throttle interval
         - throttledText (current text with throttling enabled)
-        - text (current text)
-    * Use for automated search by binding to throttledTextChanged -property
-        - QML will emit this automatically when throttledText -property
-          is changed
+    * Use this component for the search field with binding throttledText
+      property to the searchModel
 
-1.4 Splash screen
+1.6 Splash screen
 -----------------
 
-    Implement an animated splash screen when the application starts.
+    Implement an animated splash screen when the application starts. 
 
-1.5 Fancy graphics to about box
+1.7 Fancy graphics to about box
 -------------------------------
 
     Implement something fancy in the about box e.g. with the particle engine or
-    create fancy transitions from main view to about box etc.
+    create fancy transitions from main view to about box etc. Check current about
+    box for some examples.
 
-1.6 Showing of current twitter trends
+1.8 Showing of current twitter trends
 -------------------------------------
 
-    Get current twitter trends and show them as a list. When clicked, set the
-    trend as current search.
+    Get currently trending twitter search keywords and show them in the UI. 
+    Allow user to perform searches based on these trending topics.
 
     * http://dev.twitter.com/doc/get/trends
     * http://api.twitter.com/1/trends.json (example URL, use .xml for XmlListModel)
 
-    See SearchModel.qml for examples of how to do it.
+    * Define your own XmlListModel and bind it to UI
+    * See SearchModel.qml and TweetView.qml for examples of how to do it
 
 2. QML and C++
 ===============================================
@@ -73,9 +82,9 @@
 2.1 Saving of current search term over application restarts
 -----------------------------------------------------------
 
-    * When application is started, current search term is loaded from
+    * When application is started, current search term should be loaded from 
       persistent property file. Whenever use enters new search term, the current
-      search term is saved to be used after next restart.
+      search term should saved to be used after next restart.
     * See http://doc.qt.nokia.com/4.7-snapshot/qdeclarativecontext.html,
       especially #contextProperty() and #setContextProperty()
     * QML and C++ interoperability: http://doc.qt.nokia.com/4.7-snapshot/qtbinding.html
