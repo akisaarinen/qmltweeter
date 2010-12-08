@@ -14,8 +14,8 @@ qmltweeter in order to learn QML.
 1.2 Add button to refresh current search results
 ---------------------------------------------------
 
-    * Instead of reacting only to enter, add a button next to the tweet are for
-      refreshing tweets
+    * Instead of reacting only to enter, add a button next to the search box
+      for refreshing tweets
     * Implement directly to MainView.qml
     * http://doc.qt.nokia.com/4.7-snapshot/qml-mousearea.html
 
@@ -23,7 +23,8 @@ qmltweeter in order to learn QML.
 ---------------------------------------------------
 
     * Create a new QML component named 'Button' in qml/Button.qml 
-    * Remember to add as a resource in "req.qrc"
+    * Remember to add as a resource in "res.qrc" or it won't be available
+      as a component in the QML (runtime won't find it)
     * Define own component properties (at least) for
         - text that is displayed
         - color of the text
@@ -45,7 +46,8 @@ qmltweeter in order to learn QML.
 1.5 Extract throttled input as a QML component
 ----------------------------------------------
 
-    * Extract to QML component by creating e.g. "qml/ThrottledSearchInput.qml"
+    * Extract to QML component by creating "qml/ThrottledSearchInput.qml"
+    * Remember to add to 'res.qrc' as resource
     * Define your own component properties for e.g.:
         - throttle interval
         - throttledText (current text with throttling enabled)
@@ -55,7 +57,7 @@ qmltweeter in order to learn QML.
 1.6 Splash screen
 -----------------
 
-    Implement an animated splash screen when the application starts. 
+    Implement an animated splash screen when the application starts.
 
 1.7 Fancy graphics to about box
 -------------------------------
@@ -70,10 +72,10 @@ qmltweeter in order to learn QML.
     Get currently trending twitter search keywords and show them in the UI. 
     Allow user to perform searches based on these trending topics.
     
-   NOTE: Non-location-specific trends are only available from Twitter in
-         JSON format and QML currently doesn't provide a JsonListModel
-         out-of-the-box, so we'll us the location-specific trends
-         API here which is also serving XML.
+    NOTE: Non-location-specific trends are only available from Twitter in
+          JSON format, while QML currently doesn't provide a JsonListModel
+          out-of-the-box. So we'll use the location-specific trends
+          API here, because that does respond with XML too.
 
     * http://api.twitter.com/1/trends/44418.xml (example URL)
     * http://apiwiki.twitter.com/w/page/22554753/Twitter-REST-API-Method:-trends-location
