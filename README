@@ -1,6 +1,17 @@
-Simple QML-based twitter application
+Simple QML-based twitter application for learning QML
+=====================================================
 
-Running QmlUnit tests:
+Example exercises available in EXERCISES -file in this git repository.
+
+Running the project
+-------------------
+1) Import to Qt Creator (2.0.1 or later)
+2) Compile & Enjoy
+
+Running QmlUnit tests
+---------------------
 1) Get QmlUnit at https://github.com/fgrehm/qmlunit
 2) Compile it to get qmlunit binary
 3) Run "qmlunit ." in the qmltweeter directory
+
+
