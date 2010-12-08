@@ -58,6 +58,8 @@ qmltweeter in order to learn QML.
 -----------------
 
     Implement an animated splash screen when the application starts.
+    Transition with animation from splash to main screen after timeout or
+    immediately if the splash is clicked.
 
 1.7 Fancy graphics to about box
 -------------------------------
@@ -82,7 +84,7 @@ qmltweeter in order to learn QML.
     * Define your own XmlListModel and bind it to UI
     * See SearchModel.qml and TweetView.qml for examples of how to do it
 
-2. QML and C++
+2. QML and C++ integration
 ===============================================
 
 2.1 Saving of current search term over application restarts
