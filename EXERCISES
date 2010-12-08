@@ -69,10 +69,14 @@ qmltweeter in order to learn QML.
 
     Get currently trending twitter search keywords and show them in the UI. 
     Allow user to perform searches based on these trending topics.
+    
+   NOTE: Non-location-specific trends are only available from Twitter in
+         JSON format and QML currently doesn't provide a JsonListModel
+         out-of-the-box, so we'll us the location-specific trends
+         API here which is also serving XML.
 
-    * http://dev.twitter.com/doc/get/trends
-    * http://api.twitter.com/1/trends.json (example URL, use .xml for XmlListModel)
-
+    * http://api.twitter.com/1/trends/44418.xml (example URL)
+    * http://apiwiki.twitter.com/w/page/22554753/Twitter-REST-API-Method:-trends-location
     * Define your own XmlListModel and bind it to UI
     * See SearchModel.qml and TweetView.qml for examples of how to do it
 
