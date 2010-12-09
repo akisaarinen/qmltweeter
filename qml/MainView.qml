@@ -101,6 +101,17 @@ Rectangle {
         anchors.top: topGradient.bottom
         anchors.bottom: bottomGradient.top
 
+        AnimatedImage {
+            id: loading
+            source: "/img/ajax-loader.gif"
+
+            anchors.leftMargin: 120
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.topMargin: 12
+            visible: !tweetView.visible
+        }
+
         TweetView {
             id: tweetView
             model: searchModel
