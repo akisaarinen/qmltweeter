@@ -9,7 +9,10 @@ qmltweeter in order to learn QML.
 
     * Should be visible when tweets are being fetched
     * Image available at "/img/ajax-loader.gif"
-    * http://doc.qt.nokia.com/4.7-snapshot/qml-image.html
+    * http://doc.qt.nokia.com/latest/qml-animatedimage.html
+    * For animated GIF to work, you need to use AnimatedImage.
+      Alternatively, image can be animated using animations,
+      http://doc.qt.nokia.com/4.7-snapshot/qml-rotationanimation.html
 
 1.2 Add button to refresh current search results
 ---------------------------------------------------
